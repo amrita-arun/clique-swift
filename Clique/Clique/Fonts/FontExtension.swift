@@ -23,6 +23,7 @@ extension Font {
     static let mediumItalic = Font.custom("AlbertSans-Mediumitalic", size: 28)
     static let regular = Font.custom("AlbertSans-Regular", size: 16)
     static let semiBold = Font.custom("AlbertSans-SemiBold", size: 16)
+    static let timerSemiBold = Font.custom("AlbertSans-SemiBold", size: 47)
     static let semiBoldItalic = Font.custom("AlbertSans-SemiBoldItalic", size: 28)
     static let thin = Font.custom("AlbertSans-Thin", size: 28)
     static let thinItalic = Font.custom("AlbertSans-ThinItalic", size: 28)

@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct PostView: View {
+struct HomePostView: View {
     let lightBlue = Color("LightBlue")
     let darkBlue = Color("DarkBlue")
     let yellow = Color("Yellow")
     let green = Color("Green")
     let lightGray = Color("LightGray")
+    let isSticker: Bool = false
 
     @State var comment: String = ""
     
@@ -138,7 +139,7 @@ struct PostView: View {
                         TextField("Leave a note...", text: $comment)
                             //.clipShape(Capsule())
                             .padding(.horizontal, 20)
-                            .padding(.vertical, 8)
+                            .padding(.vertical, 7)
                             .background(
                                 RoundedRectangle(cornerRadius: 18, style: .circular)
                                     .stroke(Color(.gray), lineWidth: 1)
@@ -147,29 +148,28 @@ struct PostView: View {
                             //.padding()
                             
                     }
-                    .padding(15)
+                    .padding(10)
                     
                     
                 }
-                //.frame(width: .infinity, height: .infinity)
+                .padding(.bottom, 15)
                 .padding(.top, 30)
                 .padding(.horizontal, 15)
                 
-                CommentStickerView(avatar: Image("pfp"), username: "amrita", emoji: "🍓", commentText: "that sucks", stickerColor: Color("Red"), foldColor: Color("LightRed"), textBoxColor: Color("LightRed"))
-                    .rotationEffect(.degrees(10))
-                    .offset(x: 120, y: -240)
-                //.padding(.bottom, 15)
-                //.offset(y: -60)
-                //.zIndex()
-               // .border(.green)
+               
             }
+            CommentStickerView(avatar: Image("pfp"), username: "amrita", emoji: "🍓", commentText: "that sucks", stickerColor: Color("Red"), foldColor: Color("LightRed"), textBoxColor: Color("LightRed"))
+                .rotationEffect(.degrees(10))
+                .offset(x: 120, y: 40)
+            
+            Image("goodJobStickerGreen")
+                .zIndex(5)
+                .offset(x: -140, y: -170)
             
             
             
             
         }
-        //.padding(.top, 15)
-        .padding(.bottom, 2)
         .frame(height: 650)
         .background(
             RoundedRectangle(cornerRadius: 15)
@@ -177,9 +177,6 @@ struct PostView: View {
         )
         .padding(.horizontal, 40)
         
-        
-        //.frame(maxWidth: .infinity, maxHeight: 380)
-        //.padding(.horizontal, 40)
         
     }
 }
@@ -232,5 +229,5 @@ struct TrapezoidTab: Shape {
 }
 
 #Preview {
-    PostView()
+    HomePostView()
 }
